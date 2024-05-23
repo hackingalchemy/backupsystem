@@ -40,7 +40,7 @@ class BackupManager:
                 except Exception as e:
                     self.log_table.insert("", tk.END, values=(timestamp, backup_path, f"Falha: {e}"))
                 
-                # Aguarda até o próximo dia para evitar backups repetidos no mesmo dia
+               
                 while datetime.datetime.now().strftime("%A").lower() == current_day and self.is_running:
                     time.sleep(1)
             else:
@@ -92,16 +92,16 @@ def schedule_backup():
     else:
         print("Preencha todos os campos.")
 
-# Cria a janela principal
+
 window = tk.Tk()
 window.title("Oxossi Backup")
 window.geometry("500x400")
 
-# Função para sair do programa
+
 def quit_program():
     window.destroy()
 
-# Insere nota de desenvolvedor no rodapé
+
 footer_frame = ttk.Frame(window, style="TFrame")
 footer_frame.pack(side=tk.BOTTOM, pady=10)
 footer_label = ttk.Label(footer_frame, text="Desenvolvido por Leonardo Reis")
@@ -121,7 +121,7 @@ tab_control.add(tab_destination, text="Selecionar Destino")
 tab_control.add(tab_schedule, text="Agendamento")
 tab_control.pack(expand=1, fill="both", padx=20, pady=20)
 
-# Aba Home
+
 home_frame = ttk.Frame(tab_home, style="TFrame")
 home_frame.pack(pady=50)
 
@@ -131,7 +131,7 @@ home_label.pack(pady=20)
 enter_button = ttk.Button(home_frame, text="Entrar", command=lambda: tab_control.select(tab_source))
 enter_button.pack()
 
-# Aba de seleção de arquivo
+
 frame_source = ttk.Frame(tab_source, style="TFrame", height=150)
 frame_source.pack(side=tk.LEFT, padx=10)
 
@@ -143,7 +143,7 @@ entry_source.pack(pady=5)
 button_select_file = ttk.Button(frame_source, text="Selecionar", command=select_file)
 button_select_file.pack(pady=5)
 
-# Aba de seleção de destino
+
 frame_destination = ttk.Frame(tab_destination, style="TFrame")
 frame_destination.pack(side=tk.LEFT, padx=10)
 
@@ -155,7 +155,7 @@ entry_destination.pack(pady=5)
 button_select_destination = ttk.Button(frame_destination, text="Selecionar", command=select_destination)
 button_select_destination.pack(pady=5)
 
-# Aba de agendamento
+
 frame_schedule = ttk.Frame(tab_schedule, style="TFrame")
 frame_schedule.pack()
 
@@ -201,7 +201,7 @@ label_time_sunday.grid(row=1, column=6)
 entry_time_sunday = ttk.Entry(frame_schedule, font=("Arial", 12))
 entry_time_sunday.grid(row=2, column=6)
 
-# Botões de iniciar e parar o backup
+
 frame_buttons = ttk.Frame(window, style="TFrame")
 frame_buttons.pack(pady=20)
 
@@ -211,7 +211,6 @@ button_start.grid(row=0, column=0, padx=10)
 button_stop = ttk.Button(frame_buttons, text="Parar Backup", command=quit_program)
 button_stop.grid(row=0, column=1, padx=10)
 
-# Área de log
 frame_log = ttk.Frame(window, style="TFrame")
 frame_log.pack()
 
