@@ -104,7 +104,7 @@ def quit_program():
 
 footer_frame = ttk.Frame(window, style="TFrame")
 footer_frame.pack(side=tk.BOTTOM, pady=10)
-footer_label = ttk.Label(footer_frame, text="Desenvolvido por Leonardo Reis")
+footer_label = ttk.Label(footer_frame, text="Desenvolvido por Hacking Alchemy")
 footer_label.pack()
 
 style = ttk.Style(window)
