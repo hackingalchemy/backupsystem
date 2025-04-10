@@ -94,7 +94,7 @@ def schedule_backup():
 
 
 window = tk.Tk()
-window.title("Oxossi Backup")
+window.title("Alchemy Backup")
 window.geometry("500x400")
 
 
@@ -104,7 +104,7 @@ def quit_program():
 
 footer_frame = ttk.Frame(window, style="TFrame")
 footer_frame.pack(side=tk.BOTTOM, pady=10)
-footer_label = ttk.Label(footer_frame, text="Desenvolvido por Hacking Alchemy")
+footer_label = ttk.Label(footer_frame, text="Hacking Alchemy")
 footer_label.pack()
 
 style = ttk.Style(window)
@@ -125,7 +125,7 @@ tab_control.pack(expand=1, fill="both", padx=20, pady=20)
 home_frame = ttk.Frame(tab_home, style="TFrame")
 home_frame.pack(pady=50)
 
-home_label = ttk.Label(home_frame, text="Bem-vindo ao Oxossi Backup", font=("Arial", 16, "bold"))
+home_label = ttk.Label(home_frame, text="Bem-vindo ao Alchemy backup", font=("Arial", 16, "bold"))
 home_label.pack(pady=20)
 
 enter_button = ttk.Button(home_frame, text="Entrar", command=lambda: tab_control.select(tab_source))
